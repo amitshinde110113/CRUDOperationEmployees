@@ -6,9 +6,9 @@ const router = express.Router();
 router.get('/', (req, res, next) => {
     Employee.find().select('_id firstName lastName age email salary').exec()
         .then(result => {
-            res.status(200).json({
-                data:result,
-            })
+            res.status(200).json(
+                result
+            )
 
         }).catch(err => {
             res.status(404).json({
@@ -29,18 +29,18 @@ router.post('/create', (req, res, next) => {
         age: req.body.age,
         email: req.body.email,
         salary: req.body.salary,
+        gender:req.body.gender
 
 
     })
-    employee.save().select('_id firstName lastName age email salary').then(result => {
-        if(result)
-        {
+    employee.save().then(result => {
+       
         res.status(200).json(
             {
                 Message: 'success employee created',
                 data: employee
             })
-        }else{res.status(500).json({error:err});}
+        
     }
 
     ).catch(err => {

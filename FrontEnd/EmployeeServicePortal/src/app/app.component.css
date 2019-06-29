@@ -1,0 +1,21 @@
+h1:hover{
+    color: gray
+}
+.Radio2{
+    margin-left:30px
+}
+.Radio{
+    margin-left:50px
+}
+.divimg{
+  
+   background-image:url("./res/emp.jpg")
+}
+.divimg2{
+    padding:10px;
+color:whitesmoke;
+font-family: 'Gill Sans';
+font-size: 20px;
+text-shadow: 20ch brown;
+    background:none
+ }
