@@ -1,6 +1,6 @@
 {
     "env":{
-        "MONGO_PW":"amit_shinde",
+        "MONGO_PW":"",
         "jwt_key":"password"
     }
     
