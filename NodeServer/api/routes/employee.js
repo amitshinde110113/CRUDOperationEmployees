@@ -4,7 +4,7 @@ const Employee = require('../models/employees');
 const router = express.Router();
 
 router.get('/', (req, res, next) => {
-    Employee.find().select('_id firstName lastName age email salary').exec()
+    Employee.find().select('_id firstName lastName age email salary gender').exec()
         .then(result => {
             res.status(200).json(
                 result

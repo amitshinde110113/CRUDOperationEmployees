@@ -9,13 +9,36 @@ h1:hover{
 }
 .divimg{
   
-   background-image:url("./res/emp.jpg")
+   width:1000px;
 }
 .divimg2{
-    padding:10px;
-color:whitesmoke;
+   
+color:black;
 font-family: 'Gill Sans';
 font-size: 20px;
 text-shadow: 20ch brown;
-    background:none
+padding:10px;
+    margin-top:1cm;
+    float:center;
+    width:620px;
+    height:600px;
+
  }
+ #divm{
+
+height:60px;
+background-color:crimson;
+text-align: center;
+padding:2px;
+color:white;
+text-shadow: black 2px;
+text-align:center;
+ }
+
+
+ .formdiv{
+    box-shadow: 5px 10px 20px 10px
+
+ }
+
+

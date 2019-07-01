@@ -1,51 +1,66 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div id="div" style="text-align:center"
-  style="height:60px;background-color:crimson;text-align: center;padding:2px;color:white;text-shadow: black 2px">
+<div id="divm">
   <h1>
     Welcome to {{ title }}!
   </h1>
 </div>
-<div class="container divimg " >
-<div class="container divimg2" style="margin-top:2cm;float:center;width:600px;">
-  <form [formGroup]="user">
-  <div class="form-group">
-    <label>First Name</label>
-    <input formControlName="firstName" class="form-control" type="text" name=""
-    >
-  </div>
+<div class="container divimg formdiv" >
+  <div class="container divimg2 ">
+    <div class="container-fluid" style="text-align: center;text-emphasis: emphasis 1px;font:'red-Serif'"><label>Employee Details</label></div>
+    
+    <form [formGroup]="user"  class="">
+       
+      <div class="form-group "  >
+        <label>First Name</label>
+        <input formControlName="firstName" class="form-control" type="text" name=""
+        [class.is-invalid]="user.get('firstName').invalid && user.get('firstName').touched" >
+      </div>
 
-  <div class="form-group">
-    <label>Last Name</label>
-    <input formControlName="lastName" class="form-control" type="text" name=""
-  >
-  </div>
+      <div class="form-group">
+        <label>Last Name</label>
+        <input formControlName="lastName" class="form-control" type="text" name=""
+        [class.is-invalid]="user.get('lastName').invalid && user.get('lastName').touched" >
+        
+        
+      </div>
 
-  <div class="form-group">
-    <label>Email</label>
-    <input formControlName="email" class="form-control" type="text" name="" 
- >
-  </div>
-  <div class="form-group">
-    <label>Salary</label>
-    <input formControlName="salary" class="form-control" type="text" name="">
-  </div>
-  <div class="form-group">
-    <label>Age</label>
-    <input formControlName="age" class="form-control" type="text" name="">
-  </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input formControlName="email" class="form-control" type="text" name=""
+        [class.is-invalid]="user.get('email').invalid && user.get('email').touched" >
+        
+        
+      </div>
+      <div class="form-group">
+        <label>Salary</label>
+        <input formControlName="salary" class="form-control" type="text" name=""
+        [class.is-invalid]="user.get('salary').invalid && user.get('salary').touched" >
+        
+      </div>
+      <div class="form-group">
+        <label>Age</label>
+        <input formControlName="age" class="form-control" type="text" name=""
+        [class.is-invalid]="user.get('age').invalid && user.get('age').touched" >
+        
+      </div>
 
-  <div class="radio">
-    <label><input type="radio" value="male" formControlName="gender"  checked>Male</label>
-    <label class="Radio2"><input type="radio" value="female" formControlName="gender">Female</label>
+      <div class="radio">
+        <label><input type="radio" value="male" formControlName="gender" checked>Male</label>
+        <label class="Radio2"><input type="radio" value="female" formControlName="gender">Female</label>
 
+      </div>
+    </form>
+    
+    <div calss="container" style="width:680px">
+      <button  [disabled]="btnPrevious"  style="float:left" (click)="onPrevious()" class="btn btn-warning btn-sm" type="button">Previous</button>
+      <button id="b1" (click)="onCreate()" class="btn btn-success btn-sm" type="button">Create</button>
+      <button   [disabled]="btnUpdate" (click)="onUpdate()" class="btn btn-info btn-sm" type="button">Update</button>
+      <button  [disabled]="btnUpdate"  (click)="onDelete()" class="btn btn-danger btn-sm" type="button">Delete</button>
+      <button  (click)="onLoad()" class="btn btn-success btn-sm" type="button">Load</button>
+      <button [disabled]="btnNext"  (click)="onNext()" class="btn btn-warning btn-sm" type="button">Next</button>
+    </div>
   </div>
-</form>
-  <div calss="container" style="width:400px">
-    <button (click)="onCreate()" class="btn btn-success btn-sm" type="button">Create</button>
-    <button class="btn btn-info btn-sm" type="button">Update</button>
-    <button class="btn btn-danger btn-sm" type="button">Delete</button>
-    <button  (click)="onLoad()" class="btn btn-primary btn-sm" type="button">Load</button>
-  </div>
-</div>
-</div>
+  <marquee behavior="alternate" direction="">Welcome to employee service portel. Here you can add employees, update their details and delete employee</marquee>
+</div><br>
+<footer><p style="text-align: center">	&#169; Amit Shinde 	<small style="float:right; margin-right:10px">V.0</small></p></footer>
 <router-outlet></router-outlet>
